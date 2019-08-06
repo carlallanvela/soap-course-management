@@ -10,6 +10,7 @@ package com.example.soap.webservices.soapcoursemanagement.jaxb;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="status" type="{http://carlallanvela.com/courses}Status"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,27 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id"
+    "status"
 })
-@XmlRootElement(name = "GetCourseDetailsRequest")
-public class GetCourseDetailsRequest {
+@XmlRootElement(name = "DeleteCourseDetailsResponse")
+public class DeleteCourseDetailsResponse {
 
-    protected int id;
+    @XmlElement(required = true)
+    protected Status status;
 
     /**
-     * Gets the value of the id property.
+     * Gets the value of the status property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Status }
+     *     
      */
-    public int getId() {
-        return id;
+    public Status getStatus() {
+        return status;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the status property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Status }
+     *     
      */
-    public void setId(int value) {
-        this.id = value;
+    public void setStatus(Status value) {
+        this.status = value;
     }
 
 }
